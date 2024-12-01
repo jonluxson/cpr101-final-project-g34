@@ -5,6 +5,7 @@
 
 void fundamentals(void)
 {
+    // V1
     printf("*** Start of Indexing Strings Demo ***\n");
     char buffer1[BUFFER_SIZE];     // Buffer to store the user input string
     char numInput[NUM_INPUT_SIZE]; // Buffer to store the user input for position
@@ -34,4 +35,20 @@ void fundamentals(void)
         }
     } while (strcmp(buffer1, "q") != 0); // Continue the loop if the user hasn't typed "q"
     printf("*** End of Indexing Strings Demo ***\n");
+
+    // V2
+    printf("*** Start of Measuring Strings Demo ***\n");
+    char buffer2[BUFFER_SIZE]; // Define a buffer array to store user input
+    do
+    {
+        printf("Type a string (q - to quit):\n");
+        fgets(buffer2, BUFFER_SIZE, stdin);  // Read the input string from stdin and store it in the buffer
+        buffer2[strlen(buffer2) - 1] = '\0'; // Remove the trailing newline character added by fgets
+        if (strcmp(buffer2, "q") != 0)
+        {
+            printf("The length of \"%s\" is %d characters\n",
+                   buffer2, (int)strlen(buffer2));
+        }
+    } while (strcmp(buffer2, "q") != 0);
+    printf("*** End of Measuring Strings Demo ***\n");
 }
